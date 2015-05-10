@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EnvioDTE xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte EnvioDTE_v10.xsd" version="1.0">
+<SetDTE ID="SETDTE96568740X52X7031095X94141081">
+<Caratula version="1.0">
+<RutEmisor>96568740-8</RutEmisor>
+<RutEnvia>11862736-9</RutEnvia>
+<RutReceptor>76846620-3</RutReceptor>
+<FchResol>2006-08-29</FchResol>
+<NroResol>106</NroResol>
+<TmstFirmaEnv>2015-05-09T11:09:51</TmstFirmaEnv>
+<SubTotDTE>
+<TpoDTE>52</TpoDTE>
+<NroDTE>1</NroDTE>
+</SubTotDTE>
+</Caratula>
+<DTE version="1.0">
+    <Documento ID="DTE96568740X52X7031095X20150509110836">
+        <Encabezado>
+          <IdDoc>
+            <TipoDTE>52</TipoDTE>
+            <Folio>7031095</Folio>
+            <FchEmis>2015-05-09</FchEmis>
+            <TipoDespacho>1</TipoDespacho>
+            <IndTraslado>6</IndTraslado>
+          </IdDoc>
+          <Emisor>
+            <RUTEmisor>96568740-8</RUTEmisor>
+            <RznSoc>GASCO GLP S A</RznSoc>
+            <GiroEmis>PRODUCCIÓN Y DISTRIBUCIÓN DE GAS</GiroEmis>
+            <Acteco>402000</Acteco>
+            <DirOrigen>Meulén 130</DirOrigen>
+            <CmnaOrigen>Quilicura</CmnaOrigen>
+            <CiudadOrigen>Santiago</CiudadOrigen>
+          </Emisor>
+          <Receptor>
+            <RUTRecep>76846620-3</RUTRecep>
+            <CdgIntRecep>0012236734</CdgIntRecep>
+            <RznSocRecep>JORGE LLANOS GACITUA E.I.R.L.</RznSocRecep>
+            <GiroRecep>VENTA AL POR MENOR DE GAS LICUADO EN BOM</GiroRecep>
+            <DirRecep>AV INDEPENDENCIA 3762</DirRecep>
+            <CmnaRecep>CONCHALI</CmnaRecep>
+            <CiudadRecep>SANTIAGO</CiudadRecep>
+          </Receptor>
+          <Transporte>
+            <Patente>JORGE LL</Patente>
+            <CmnaDest>.</CmnaDest>
+          </Transporte>
+          <Totales>
+            <MntNeto>1426935</MntNeto>
+            <TasaIVA>19</TasaIVA>
+            <MntTotal>1426935</MntTotal>
+            <MontoPeriodo>1426935</MontoPeriodo>
+            <VlrPagar>0</VlrPagar>
+          </Totales>
+        </Encabezado>
+        <Detalle>
+          <NroLinDet>1</NroLinDet>
+          <NmbItem>11 KG CARGA GAS NORMAL</NmbItem>
+          <QtyRef>195</QtyRef>
+          <UnmdRef>C/U</UnmdRef>
+          <PrcRef>7317.615384</PrcRef>
+          <QtyItem>195</QtyItem>
+          <UnmdItem>C/U</UnmdItem>
+          <PrcItem>7317.615384</PrcItem>
+          <MontoItem>1426935</MontoItem>
+        </Detalle>
+        <Referencia>
+          <NroLinRef>1</NroLinRef>
+          <TpoDocRef>033</TpoDocRef>
+          <FolioRef>7661942</FolioRef>
+          <FchRef>2015-05-08</FchRef>
+          <RazonRef>Entrega Diferida de Factura</RazonRef>
+        </Referencia>
+        <TED version="1.0">
+          <DD>
+            <RE>96568740-8</RE>
+            <TD>52</TD>
+            <F>7031095</F>
+            <FE>2015-05-09</FE>
+            <RR>76846620-3</RR>
+            <RSR>JORGE LLANOS GACITUA E.I.R.L.</RSR>
+            <MNT>1426935</MNT>
+            <IT1>11 KG CARGA GAS NORMAL</IT1>
+          <CAF version="1.0">
+<DA>
+<RE>96568740-8</RE>
+<RS>GASCO GLP S A</RS>
+<TD>52</TD>
+<RNG><D>7022001</D><H>7122000</H></RNG>
+<FA>2015-04-24</FA>
+<RSAPK><M>+e414uvCf2YkzjBEIJ97wgxcDBKf9IE6QsXZcUejkdu+k5dAKeDnZNeIyD6C1fFK8qJPn/VNPEu2LiOmnlRKWQ==</M><E>Aw==</E></RSAPK>
+<IDK>300</IDK>
+</DA>
+<FRMA algoritmo="SHA1withRSA">JIlqKagmO3SiwDEjrlE5rCgK+gvLcX3qksfAF5xdD7gHtl4iWdluGrhv8a17raTtSyy26ma3C+tISaCMnRNVRw==</FRMA>
+</CAF><TSTED>2015-05-09T11:08:36</TSTED></DD>
+        <FRMT algoritmo="SHA1withRSA">fsgEnC/Vyd3SDQ7nIWQJyw64zCU6CUMWHIV8a2/EBzAWTExQ4sqdz6Ko8+d2vkRDIl5Ps/sPdVGqEFUlHUDB8Q==</FRMT></TED>
+      <TmstFirma>2015-05-09T11:08:36</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+<Reference URI="#DTE96568740X52X7031095X20150509110836">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>BHqpgGtt71Cxm7amoneHeOBGVog=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+prNc4Zd+rZvNzdO156NhFd1o3KwWBXWQXyTqkVzwVSswzbdIUfcEwy1aWMBX2SUW4Ww6BRlORJor
++mwc4vz9IlNVXRP0UfWrbHgS5Y1ESocMBO3wIh/4rW9ATeTAU91ix76JkR1A+Qn+BIQ7rwvK//+i
+zc5oqPVKUjl5J1ZABwU=
+</SignatureValue>
+<KeyInfo>
+<KeyValue>
+<RSAKeyValue>
+<Modulus>
+xUeROyWpTZpRFztIS2C2z9dG03R3/mLDmLwZkFW35Sg0wYPCyf6v+kJ07c6gnS2Asjw4njX6ENP/
+r/4NurME2/y9RMc8VtBAlfyEBe+OvUrbmJ0wi6NpIdI1zAvs8/Qa+Lc2aF97+bLQaPDnbMADLlVu
+U+9ypS0ugYuIsQEv1IU=
+</Modulus>
+<Exponent>AQAB</Exponent>
+</RSAKeyValue>
+</KeyValue>
+<X509Data>
+<X509Certificate>
+MIIGKjCCBRKgAwIBAgIKGkCxQwAAAAF0IjANBgkqhkiG9w0BAQUFADCB0jELMAkGA1UEBhMCQ0wx
+HTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQHEwhTYW50aWFnbzEUMBIGA1UE
+ChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9yaWRhZCBDZXJ0aWZpY2Fkb3JhMTAwLgYDVQQD
+EydFLUNFUlRDSElMRSBDQSBGSVJNQSBFTEVDVFJPTklDQSBTSU1QTEUxJzAlBgkqhkiG9w0BCQEW
+GHNjbGllbnRlc0BlLWNlcnRjaGlsZS5jbDAeFw0xNDA3MTUxMjU0MTZaFw0xNzA3MTQxMjU0MTZa
+MIGsMQswCQYDVQQGEwJDTDEjMCEGA1UECBMaTUVUUk9QT0xJVEFOQSBERSBTQU5USUFHTyAxETAP
+BgNVBAcTCFNhbnRpYWdvMREwDwYDVQQKEwhHYXNjbyBTQTERMA8GA1UECxMIRmluYW56YXMxHTAb
+BgNVBAMTFE1hcnRhIEJlbml0ZXogSHVlcnRhMSAwHgYJKoZIhvcNAQkBFhFtYmVuaXRlekBnYXNj
+by5jbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAxUeROyWpTZpRFztIS2C2z9dG03R3/mLD
+mLwZkFW35Sg0wYPCyf6v+kJ07c6gnS2Asjw4njX6ENP/r/4NurME2/y9RMc8VtBAlfyEBe+OvUrb
+mJ0wi6NpIdI1zAvs8/Qa+Lc2aF97+bLQaPDnbMADLlVuU+9ypS0ugYuIsQEv1IUCAwEAAaOCAqgw
+ggKkMD0GCSsGAQQBgjcVBwQwMC4GJisGAQQBgjcVCILcgy+Fk4xmhdWdF4Li3CeB7+w8YYHLnhSG
+qIJYAgFkAgEEMB0GA1UdDgQWBBS92z2CUFURnC9u96I3S6kU82PXVzALBgNVHQ8EBAMCBPAwHwYD
+VR0jBBgwFoAUeOE+n9ISs3o8jc0wDlOzQykHs1UwPgYDVR0fBDcwNTAzoDGgL4YtaHR0cDovL2Ny
+bC5lLWNlcnRjaGlsZS5jbC9lY2VydGNoaWxlY2FGRVMuY3JsMDsGCCsGAQUFBwEBBC8wLTArBggr
+BgEFBQcwAYYfaHR0cDovL29jc3AuaW50ZXJjYXBpdC5jb20vb2NzcDAjBgNVHREEHDAaoBgGCCsG
+AQQBwQEBoAwWCjEwMzQ4NzcyLTIwIwYDVR0SBBwwGqAYBggrBgEEAcEBAqAMFgo5NjkyODE4MC01
+MIIBTQYDVR0gBIIBRDCCAUAwggE8BggrBgEEAcNSBTCCAS4wLQYIKwYBBQUHAgEWIWh0dHA6Ly93
+d3cuZS1jZXJ0Y2hpbGUuY2wvQ1BTLmh0bTCB/AYIKwYBBQUHAgIwge8egewAQwBlAHIAdABpAGYA
+aQBjAGEAZABvACAARgBpAHIAbQBhACAAUwBpAG0AcABsAGUALgAgAEgAYQAgAHMAaQBkAG8AIAB2
+AGEAbABpAGQAYQBkAG8AIABlAG4AIABmAG8AcgBtAGEAIABwAHIAZQBzAGUAbgBjAGkAYQBsACwA
+IABxAHUAZQBkAGEAbgBkAG8AIABoAGEAYgBpAGwAaQB0AGEAZABvACAAZQBsACAAQwBlAHIAdABp
+AGYAaQBjAGEAZABvACAAcABhAHIAYQAgAHUAcwBvACAAdAByAGkAYgB1AHQAYQByAGkAbzANBgkq
+hkiG9w0BAQUFAAOCAQEAAvW9YjutwAlXRJz2gasJT86VScKogVe10xxaMvAyuz+oDd+IKk46J2Xg
+jnFn0Q0aH/tjQPBtI8k8lLTCID4HgGAhJggXNtOJwsNqXGU85lMtRiXGXczGtxia1o5gPpC3uA7h
+Wib1aFZPoSS2M9rgPDmN/v1tmyl5e2F92hzI64Jxf+PSsbHBcaxD/XjRF/RXoQT/cRZHB7B0rp3T
+wY6YLPWUQST59hZKRQKOoFnu217w/hi4Q1rthEACT1jKHO0257VglXyJWWhdIistR39tknBMsGtm
+XoLKcnHNGligS3al4iMoIMfc8OLuB+uTv+ez5FTzDv3KHUcA7RMkA+35wA==
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></DTE>
+</SetDTE>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+<Reference URI="#SETDTE96568740X52X7031095X94141081">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>TxmZWKaJhvxd8mrxHZl/2yU6X+4=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+aamWOY3P0VraTnnWWl7wdrnqKp2Lbb1Xq/RWyO1EmnyryC2ZGbvjiw+pK6n4LFFH1RafG7HtQ95o
+tePW6dwSI+ebZgdf+NugVcZ6kKhHxne3wotkhvolc7khfuvYm0TkqySCdy8ZEnHbQ1t7B7aCFpzK
+vSDJ2dMe/ClVxLBhaQw=
+</SignatureValue>
+<KeyInfo>
+<KeyValue>
+<RSAKeyValue>
+<Modulus>
+0leUZZleWTngIOnMDl5Au4iPgqsGqhdfJjMngUopiRMH8ZypTrG+oPGauXCmEz4ftfhv1suayhOw
+HaBNDHeVDWc3yBNNG8RySW/vj8L2R1dBjaD2Tpg+LLUekAabkb0ZpafsePpCNXME2UaWasssAwxW
+MA+VwJi5aY8IHYJKXWc=
+</Modulus>
+<Exponent>AQAB</Exponent>
+</RSAKeyValue>
+</KeyValue>
+<X509Data>
+<X509Certificate>
+MIIF2jCCBMKgAwIBAgIDAJFXMA0GCSqGSIb3DQEBBQUAMIGmMQswCQYDVQQGEwJDTDEYMBYGA1UE
+ChMPQWNlcHRhLmNvbSBTLkEuMUgwRgYDVQQDEz9BY2VwdGEuY29tIEF1dG9yaWRhZCBDZXJ0aWZp
+Y2Fkb3JhIENsYXNlIDMgUGVyc29uYSBOYXR1cmFsIC0gVjIxHjAcBgkqhkiG9w0BCQEWD2luZm9A
+YWNlcHRhLmNvbTETMBEGA1UEBRMKOTY5MTkwNTAtODAeFw0xMjEyMTkyMTU3MDJaFw0xNTEyMTky
+MTU3MDJaMIGTMQswCQYDVQQGEwJDTDEjMCEGA1UEDBMaSU5HRU5JRVJPIENJVklMIElORFVTVFJJ
+QUwxKDAmBgNVBAMTH0pJTU1ZIENIUklTVE9QSEVSIEZMT1JFUyBTSUdPTkExIDAeBgkqhkiG9w0B
+CQEWEWpzZmxvcmVzQGVudGVsLmNsMRMwEQYDVQQFEwoxMTg2MjczNi05MIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQDSV5RlmV5ZOeAg6cwOXkC7iI+CqwaqF18mMyeBSimJEwfxnKlOsb6g8Zq5
+cKYTPh+1+G/Wy5rKE7AdoE0Md5UNZzfIE00bxHJJb++PwvZHV0GNoPZOmD4stR6QBpuRvRmlp+x4
++kI1cwTZRpZqyywDDFYwD5XAmLlpjwgdgkpdZwIDAQABo4ICpDCCAqAwHwYDVR0jBBgwFoAUQN/o
+9lYQ+XQanoTMIgjQNq0pJlEwHQYDVR0OBBYEFBU+/SF+rbwu/H6qzwg4pd/mhzB4MAsGA1UdDwQE
+AwIE8DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwEQYJYIZIAYb4QgEBBAQDAgWgMIHy
+BgNVHSAEgeowgecwgeQGCisGAQQBtWuHaQIwgdUwJwYIKwYBBQUHAgEWG2h0dHA6Ly93d3cuYWNl
+cHRhLmNvbS9DUFNWMjCBqQYIKwYBBQUHAgIwgZwwFhYPQWNlcHRhLmNvbSBTLkEuMAMCAQIagYFF
+bCB0aXR1bGFyIGhhIHNpZG8gdmFsaWRhZG8gZW4gZm9ybWEgcHJlc2VuY2lhbCwgcXVlZGFuZG8g
+aGFiaWxpdGFkbyBlbCBDZXJ0aWZpY2FkbyBwYXJhIHVzbyB0cmlidXRhcmlvLCBwYWdvcywgY29t
+ZXJjaW8geSBvdHJvcy4wWgYDVR0SBFMwUaAYBggrBgEEAcEBAqAMFgo5NjkxOTA1MC04oCQGCCsG
+AQUFBwgDoBgwFgwKOTY5MTkwNTAtOAYIKwYBBAHBAQKBD2luZm9AYWNlcHRhLmNvbTBcBgNVHREE
+VTBToBgGCCsGAQQBwQEBoAwWCjExODYyNzM2LTmgJAYIKwYBBQUHCAOgGDAWDAoxMTg2MjczNi05
+BggrBgEEAcEBAoERanNmbG9yZXNAZW50ZWwuY2wwOwYIKwYBBQUHAQEELzAtMCsGCCsGAQUFBzAB
+hh9odHRwOi8vb2NzcC5hY2VwdGEuY29tL0NsYXNlM1YyMDMGA1UdHwQsMCowKKAmoCSGImh0dHA6
+Ly9jcmwuYWNlcHRhLmNvbS9DbGFzZTNWMi5jcmwwDQYJKoZIhvcNAQEFBQADggEBABoUFTrLfqCR
+lYaAAOeQOIv7tGLXfPDZwlrUfH7BNeqwhq9y5M05Bjy4oHEMy1cAkFpBgmVRxR8V9yivdlfLI3r3
+Mpm6kdgLE/WEcqLGkbS2+MDpeKjZWiEgAKPapFL1HQcZLfp/sjqRYVyWvUy2+H1H62ZBsTSLKFtQ
+kM1iINDFPdozVnOpAX86lOR6o2cbOxlA0azRG8MZjsmuLS12lpzf3VuB89u5OajO7EILwTZcLlkX
+NXW8H6YEp0/0CdemD4mFtJwwi6WrpoLhG6CkkyhMqAf/obTFwVtmMUXSNoGYWyHJwv0Tkj/ZtYOj
+DSWwddymjrYV2zsk0b1YYES0mEA=
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</EnvioDTE>

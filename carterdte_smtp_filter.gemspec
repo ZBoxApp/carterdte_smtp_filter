@@ -18,6 +18,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency 'celluloid-io', ">= 0.16"
+  spec.add_dependency 'mail', ">= 2.6"
+  spec.add_dependency "midi-smtp-server", ">= 2.0"
+  
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-minitest"
+  spec.add_development_dependency "minitest-reporters"  
 end

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EnvioDTE xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte EnvioDTE_v10.xsd" version="1.0">
+<SetDTE ID="SETDTE96529310X33X3152118X94141243">
+<Caratula version="1.0">
+<RutEmisor>96529310-8</RutEmisor>
+<RutEnvia>11862736-9</RutEnvia>
+<RutReceptor>81201000-K</RutReceptor>
+<FchResol>2004-12-31</FchResol>
+<NroResol>118</NroResol>
+<TmstFirmaEnv>2015-05-09T11:10:10</TmstFirmaEnv>
+<SubTotDTE>
+<TpoDTE>33</TpoDTE>
+<NroDTE>1</NroDTE>
+</SubTotDTE>
+</Caratula>
+<DTE version="1.0">
+    <Documento ID="DTE96529310X33X3152118X20150509111002">
+        <Encabezado>
+          <IdDoc>
+            <TipoDTE>33</TipoDTE>
+            <Folio>3152118</Folio>
+            <FchEmis>2015-05-09</FchEmis>
+            <FchVenc>2015-06-11</FchVenc>
+          </IdDoc>
+          <Emisor>
+            <RUTEmisor>96529310-8</RUTEmisor>
+            <RznSoc>CMPC TISSUE S.A.</RznSoc>
+            <GiroEmis>FABRICACION, VENTA Y EXPORTACION DE PRODUCTOS TISSUE PARA LA HIGIENE PERSONAL Y </GiroEmis>
+            <Acteco>34191</Acteco>
+            <CdgSIISucur>11421104</CdgSIISucur>
+            <DirOrigen>CAMINO ISLA DE MAIPO 0297</DirOrigen>
+            <CmnaOrigen>TALAGANTE</CmnaOrigen>
+            <CiudadOrigen>SANTIAGO</CiudadOrigen>
+          </Emisor>
+          <Receptor>
+            <RUTRecep>81201000-K</RUTRecep>
+            <CdgIntRecep>0000021308</CdgIntRecep>
+            <RznSocRecep>CENCOSUD RETAIL S.A.</RznSocRecep>
+            <GiroRecep>SUPERMERCADOS, RESTORANT,GRANDES TIENDAS</GiroRecep>
+            <Contacto>22004863</Contacto>
+            <DirRecep>MANUEL MONTT 221</DirRecep>
+            <CmnaRecep>CORONEL</CmnaRecep>
+            <DirPostal>AVDA. KENNEDY #9001  PISO 6</DirPostal>
+            <CmnaPostal>LAS CONDES</CmnaPostal>
+          </Receptor>
+          <Totales>
+            <MntNeto>185770</MntNeto>
+            <TasaIVA>19</TasaIVA>
+            <IVA>35296</IVA>
+            <MntTotal>221066</MntTotal>
+          </Totales>
+        </Encabezado>
+        <Detalle>
+          <NroLinDet>1</NroLinDet>
+          <CdgItem>
+            <TpoCodigo>INT1</TpoCodigo>
+            <VlrCodigo>0000073073</VlrCodigo>
+          </CdgItem>
+          <NmbItem>TOALLA HUMEDAS BABYSEC PACK(50X3)X8</NmbItem>
+          <QtyItem>12</QtyItem>
+          <UnmdItem>BTO</UnmdItem>
+          <PrcItem>24730</PrcItem>
+          <DescuentoMonto>110990</DescuentoMonto>
+          <SubDscto>
+            <TipoDscto>%</TipoDscto>
+            <ValorDscto>6</ValorDscto>
+          </SubDscto>
+          <SubDscto>
+            <TipoDscto>%</TipoDscto>
+            <ValorDscto>5</ValorDscto>
+          </SubDscto>
+          <SubDscto>
+            <TipoDscto>%</TipoDscto>
+            <ValorDscto>29.9</ValorDscto>
+          </SubDscto>
+          <MontoItem>185770</MontoItem>
+        </Detalle>
+        <Referencia>
+          <NroLinRef>1</NroLinRef>
+          <TpoDocRef>801</TpoDocRef>
+          <FolioRef>5545423444</FolioRef>
+          <FchRef>2015-05-07</FchRef>
+        </Referencia>
+        <Referencia>
+          <NroLinRef>2</NroLinRef>
+          <TpoDocRef>802</TpoDocRef>
+          <FolioRef>6929165</FolioRef>
+          <FchRef>2015-05-07</FchRef>
+        </Referencia>
+        <TED version="1.0">
+          <DD>
+            <RE>96529310-8</RE>
+            <TD>33</TD>
+            <F>3152118</F>
+            <FE>2015-05-09</FE>
+            <RR>81201000-K</RR>
+            <RSR>CENCOSUD RETAIL S.A.</RSR>
+            <MNT>221066</MNT>
+            <IT1>TOALLA HUMEDAS BABYSEC PACK(50X3)X8</IT1>
+          <CAF version="1.0">
+<DA>
+<RE>96529310-8</RE>
+<RS>CMPC TISSUE S A</RS>
+<TD>33</TD>
+<RNG><D>2682766</D><H>3682764</H></RNG>
+<FA>2013-09-30</FA>
+<RSAPK><M>5gwK567HAeMwlXEaEL8CEcQLmWcep4z/qHJXLbr7ujCak9oraGGNtXm6MUYXrSB9JGEMy8EAy9nYkqbIuAOrdw==</M><E>Aw==</E></RSAPK>
+<IDK>300</IDK>
+</DA>
+<FRMA algoritmo="SHA1withRSA">D9lUO2tQ0f0dQwfv8g39XVrKZx43LdorC2QqibATxtqGLYsUNNyLjzxQHcImCW1aZ0cdeBJZQ7QXZ+XA+gIhNA==</FRMA>
+</CAF><TSTED>2015-05-09T11:10:02</TSTED></DD>
+        <FRMT algoritmo="SHA1withRSA">e7/vn3yf0ooDer++j0+C+cyHkRiNjsLjNgoE2xgj65xxcVeCMfiFDT1eRGLMTIEPJ+p0kb64U4Q4F+lIZFrarw==</FRMT></TED>
+      <TmstFirma>2015-05-09T11:10:02</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+<Reference URI="#DTE96529310X33X3152118X20150509111002">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>kZqP1wIyAZrgc91/v1bxMKrW9lY=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+LSa75wmVtlLkvTbaGE5eAGBVt9nVf6fnFtOwBDlHAMCUvKHYlE4Bi3GLLYr9W1J9vQPUMrxbyVsJ
+Itx7IaYMKoEcoTMyHiVATl5MrW2Cz0zh1K0K9y31eiZvHMPSixtPTs9rYcYi0yXfybVXsXszEnk5
+7C2ItKENA/WdkHGJJOI=
+</SignatureValue>
+<KeyInfo>
+<KeyValue>
+<RSAKeyValue>
+<Modulus>
+2kSrIIEOHJ7fmNkz8tuG6Hy/R+JBULFdAxZoPTKVIszJOn0ZKEE1go2h8qTOzE6Ei8U3YRQ1E9CQ
+d/goJd1gugIT3doavzTgKCPA/maT1m7GEvDbSiyZvY5+7Qjl6DirThnde4Rc2UAxxhLZMAfVsmul
+kJASuIbnechk5Q2bPec=
+</Modulus>
+<Exponent>AQAB</Exponent>
+</RSAKeyValue>
+</KeyValue>
+<X509Data>
+<X509Certificate>
+MIIGEzCCBPugAwIBAgIKGrn8/AAAAAAwOjANBgkqhkiG9w0BAQUFADCB0jELMAkGA1UEBhMCQ0wx
+HTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQHEwhTYW50aWFnbzEUMBIGA1UE
+ChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9yaWRhZCBDZXJ0aWZpY2Fkb3JhMTAwLgYDVQQD
+EydFLUNFUlRDSElMRSBDQSBGSVJNQSBFTEVDVFJPTklDQSBTSU1QTEUxJzAlBgkqhkiG9w0BCQEW
+GHNjbGllbnRlc0BlLWNlcnRjaGlsZS5jbDAeFw0xMjA3MTcyMTQyMzFaFw0xNTA3MTcyMTQyMzFa
+MIHSMQswCQYDVQQGEwJDTDEWMBQGA1UECBMNTWV0cm9wb2xpdGFuYTERMA8GA1UEBxMIU2FudGlh
+Z28xFDASBgNVBAoTC0NNUEMgVElTU1VFMTwwOgYDVQQLDDNGYWJyaWNhY2nDs24gVmVudGEgRXhw
+b3J0YWNpw7NuIGRlIFByb2R1Y3RvcyBUaXNzdWUxHzAdBgNVBAMTFkFsZWphbmRybyBOYXNoIFNh
+cnF1aXMxIzAhBgkqhkiG9w0BCQEWFEpPUkdFLkNIQVZFWkBDTVBDLkNsMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQDaRKsggQ4cnt+Y2TPy24bofL9H4kFQsV0DFmg9MpUizMk6fRkoQTWCjaHy
+pM7MToSLxTdhFDUT0JB3+Cgl3WC6AhPd2hq/NOAoI8D+ZpPWbsYS8NtKLJm9jn7tCOXoOKtOGd17
+hFzZQDHGEtkwB9Wya6WQkBK4hud5yGTlDZs95wIDAQABo4ICazCCAmcwCwYDVR0PBAQDAgTwMB0G
+A1UdDgQWBBQW0DbgLC7p7x0NOj4PZ8PTuJfkMjAfBgNVHSMEGDAWgBR44T6f0hKzejyNzTAOU7ND
+KQezVTA+BgNVHR8ENzA1MDOgMaAvhi1odHRwOi8vY3JsLmUtY2VydGNoaWxlLmNsL2VjZXJ0Y2hp
+bGVjYUZFUy5jcmwwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIgtyDL4WTjGaF1Z0XguLcJ4Hv
+7DxhgcueFIaoglgCAWQCAQMwIwYDVR0RBBwwGqAYBggrBgEEAcEBAaAMFgowNzAxNzI5My0zMCMG
+A1UdEgQcMBqgGAYIKwYBBAHBAQKgDBYKOTY5MjgxODAtNTCCAU0GA1UdIASCAUQwggFAMIIBPAYI
+KwYBBAHDUgUwggEuMC0GCCsGAQUFBwIBFiFodHRwOi8vd3d3LmUtY2VydGNoaWxlLmNsL0NQUy5o
+dG0wgfwGCCsGAQUFBwICMIHvHoHsAEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAEYAaQByAG0AYQAg
+AFMAaQBtAHAAbABlAC4AIABIAGEAIABzAGkAZABvACAAdgBhAGwAaQBkAGEAZABvACAAZQBuACAA
+ZgBvAHIAbQBhACAAcAByAGUAcwBlAG4AYwBpAGEAbAAsACAAcQB1AGUAZABhAG4AZABvACAAaABh
+AGIAaQBsAGkAdABhAGQAbwAgAGUAbAAgAEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAHAAYQByAGEA
+IAB1AHMAbwAgAHQAcgBpAGIAdQB0AGEAcgBpAG8wDQYJKoZIhvcNAQEFBQADggEBAJeHeVprXB5v
+UxjpPgavUgJCXB2REWgumIV+CZ+AkIAFLewxIGUoJe/LUq5PaR9mDE9F9eYUGw251/1eDxXYA41B
+1DkcrKSBQ/0vA6J95t9JFmT+mWD9xz8mXIWNsNrLzB+tY1LtoS73puJadHNMdN1ce4y0H/SiAkNa
+YkDI3ywwdfz1rZp9QGB3nrLufg1e3j46qhTE6X3ULrVXRT10br8j2j6SgimYdlLWfXVBEhi1OXig
+vDrRlCOjfWBE3JlZ1a/GNviKCuB0JwF7bLYSSsior4sZr2Shl1p2UsyvGwhdCqqKLbxg85XkWKdv
+HcdzxrOGQwrIUusWUNx26vJHT8c=
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></DTE>
+</SetDTE>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+<Reference URI="#SETDTE96529310X33X3152118X94141243">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>1cLpcdO8Ej8ZyB6+6/GSiPxkGzs=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+epkal6vyiRhHAbYu5c21HSnay+b9lwsQpKpOu42xVNgzIMIa9JUj41fmrZ1ZO9c9+YIxus2BkX3V
+IEMleVF3b7WVwM/ki4Av1dYezbaAt+VEJUsOhjHq3q6tW35qTSShDF0zy6AiH9lCDcsEFiYBmGyy
+nBZldfpG8zrzhpVZQO8=
+</SignatureValue>
+<KeyInfo>
+<KeyValue>
+<RSAKeyValue>
+<Modulus>
+0leUZZleWTngIOnMDl5Au4iPgqsGqhdfJjMngUopiRMH8ZypTrG+oPGauXCmEz4ftfhv1suayhOw
+HaBNDHeVDWc3yBNNG8RySW/vj8L2R1dBjaD2Tpg+LLUekAabkb0ZpafsePpCNXME2UaWasssAwxW
+MA+VwJi5aY8IHYJKXWc=
+</Modulus>
+<Exponent>AQAB</Exponent>
+</RSAKeyValue>
+</KeyValue>
+<X509Data>
+<X509Certificate>
+MIIF2jCCBMKgAwIBAgIDAJFXMA0GCSqGSIb3DQEBBQUAMIGmMQswCQYDVQQGEwJDTDEYMBYGA1UE
+ChMPQWNlcHRhLmNvbSBTLkEuMUgwRgYDVQQDEz9BY2VwdGEuY29tIEF1dG9yaWRhZCBDZXJ0aWZp
+Y2Fkb3JhIENsYXNlIDMgUGVyc29uYSBOYXR1cmFsIC0gVjIxHjAcBgkqhkiG9w0BCQEWD2luZm9A
+YWNlcHRhLmNvbTETMBEGA1UEBRMKOTY5MTkwNTAtODAeFw0xMjEyMTkyMTU3MDJaFw0xNTEyMTky
+MTU3MDJaMIGTMQswCQYDVQQGEwJDTDEjMCEGA1UEDBMaSU5HRU5JRVJPIENJVklMIElORFVTVFJJ
+QUwxKDAmBgNVBAMTH0pJTU1ZIENIUklTVE9QSEVSIEZMT1JFUyBTSUdPTkExIDAeBgkqhkiG9w0B
+CQEWEWpzZmxvcmVzQGVudGVsLmNsMRMwEQYDVQQFEwoxMTg2MjczNi05MIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQDSV5RlmV5ZOeAg6cwOXkC7iI+CqwaqF18mMyeBSimJEwfxnKlOsb6g8Zq5
+cKYTPh+1+G/Wy5rKE7AdoE0Md5UNZzfIE00bxHJJb++PwvZHV0GNoPZOmD4stR6QBpuRvRmlp+x4
++kI1cwTZRpZqyywDDFYwD5XAmLlpjwgdgkpdZwIDAQABo4ICpDCCAqAwHwYDVR0jBBgwFoAUQN/o
+9lYQ+XQanoTMIgjQNq0pJlEwHQYDVR0OBBYEFBU+/SF+rbwu/H6qzwg4pd/mhzB4MAsGA1UdDwQE
+AwIE8DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwEQYJYIZIAYb4QgEBBAQDAgWgMIHy
+BgNVHSAEgeowgecwgeQGCisGAQQBtWuHaQIwgdUwJwYIKwYBBQUHAgEWG2h0dHA6Ly93d3cuYWNl
+cHRhLmNvbS9DUFNWMjCBqQYIKwYBBQUHAgIwgZwwFhYPQWNlcHRhLmNvbSBTLkEuMAMCAQIagYFF
+bCB0aXR1bGFyIGhhIHNpZG8gdmFsaWRhZG8gZW4gZm9ybWEgcHJlc2VuY2lhbCwgcXVlZGFuZG8g
+aGFiaWxpdGFkbyBlbCBDZXJ0aWZpY2FkbyBwYXJhIHVzbyB0cmlidXRhcmlvLCBwYWdvcywgY29t
+ZXJjaW8geSBvdHJvcy4wWgYDVR0SBFMwUaAYBggrBgEEAcEBAqAMFgo5NjkxOTA1MC04oCQGCCsG
+AQUFBwgDoBgwFgwKOTY5MTkwNTAtOAYIKwYBBAHBAQKBD2luZm9AYWNlcHRhLmNvbTBcBgNVHREE
+VTBToBgGCCsGAQQBwQEBoAwWCjExODYyNzM2LTmgJAYIKwYBBQUHCAOgGDAWDAoxMTg2MjczNi05
+BggrBgEEAcEBAoERanNmbG9yZXNAZW50ZWwuY2wwOwYIKwYBBQUHAQEELzAtMCsGCCsGAQUFBzAB
+hh9odHRwOi8vb2NzcC5hY2VwdGEuY29tL0NsYXNlM1YyMDMGA1UdHwQsMCowKKAmoCSGImh0dHA6
+Ly9jcmwuYWNlcHRhLmNvbS9DbGFzZTNWMi5jcmwwDQYJKoZIhvcNAQEFBQADggEBABoUFTrLfqCR
+lYaAAOeQOIv7tGLXfPDZwlrUfH7BNeqwhq9y5M05Bjy4oHEMy1cAkFpBgmVRxR8V9yivdlfLI3r3
+Mpm6kdgLE/WEcqLGkbS2+MDpeKjZWiEgAKPapFL1HQcZLfp/sjqRYVyWvUy2+H1H62ZBsTSLKFtQ
+kM1iINDFPdozVnOpAX86lOR6o2cbOxlA0azRG8MZjsmuLS12lpzf3VuB89u5OajO7EILwTZcLlkX
+NXW8H6YEp0/0CdemD4mFtJwwi6WrpoLhG6CkkyhMqAf/obTFwVtmMUXSNoGYWyHJwv0Tkj/ZtYOj
+DSWwddymjrYV2zsk0b1YYES0mEA=
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</EnvioDTE>

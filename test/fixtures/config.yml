@@ -1,0 +1,7 @@
+---
+bind_address: 127.0.0.1
+bind_port: 30024
+return_host: 127.0.0.1
+return_port: 30025
+elasticsearch_host: 127.0.0.1
+elasticsearch_port: 9200
