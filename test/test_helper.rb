@@ -5,6 +5,9 @@ require 'date'
 
 require 'minitest/autorun'
 require 'minitest/reporters' # requires the gem
+require 'webmock/minitest'
+
+require 'fake_api'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
 

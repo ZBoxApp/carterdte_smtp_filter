@@ -9,6 +9,7 @@ module CarterdteSmtpFilter
       @raw_data = raw_data
       @email = Mail.read_from_string raw_data
       @dte = extract_dte
+      @logger = CarterdteSmtpFilter.logger
     end
     
     def extract_dte
@@ -54,6 +55,7 @@ module CarterdteSmtpFilter
     end
     
     def return_email
+      @logger.info("Returning email <#{email.message_id}> to #{CarterdteSmtpFilter::Config::return_host}:#{CarterdteSmtpFilter::Config::return_port}")
       @response = email.deliver!
     end
     

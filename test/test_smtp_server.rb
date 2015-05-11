@@ -4,6 +4,9 @@ class TestSmtpServer < Minitest::Test
   
   def setup
     CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
+    @api_host = CarterdteSmtpFilter::Config::api_host
+    @api_url = "http://#{@api_host}"
+    stub_request(:any, /#{@api_host}/).to_rack(FakeApi)
     @server = CarterdteSmtpFilter::SmtpServer.new()
     @server.start
     @return_stmp = ReturnSmtp.new()
