@@ -20,8 +20,12 @@ module CarterdteSmtpFilter
     
     def process
       return_email
-      return unless dte
+      return unless has_dte?
       extract_qid_from_response
+    end
+    
+    def has_dte?
+      @dte ? true : false
     end
     
     def to_json
@@ -30,7 +34,8 @@ module CarterdteSmtpFilter
         from: @email.from,
         cc: @email.cc,
         date: @email.date.to_s,
-        dte: @dte.to_json
+        qid: qid,
+        dte: JSON.parse(@dte.to_json)
         })
     end
     

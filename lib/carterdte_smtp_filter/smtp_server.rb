@@ -12,7 +12,9 @@ module CarterdteSmtpFilter
     
     def on_message_data_event(ctx)
       message = CarterdteSmtpFilter::Message.new(ctx[:message][:data])
-      message.return_email
+      # return the email back, and extract queue_id
+      message.process
+      CarterdteSmtpFilter::ApiClient.push message if message.has_dte?
     end
     
   end

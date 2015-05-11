@@ -1,5 +1,7 @@
 require "carterdte_smtp_filter"
 require 'pp'
+require 'time'
+require 'date'
 
 require 'minitest/autorun'
 require 'minitest/reporters' # requires the gem
