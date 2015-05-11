@@ -1,0 +1,33 @@
+Date: Mon, 11 May 2015 07:32:09 -0300
+From: dte@itlinux.cl
+To: carterdte@example.com
+Message-ID: <55508529126fc_12d603fed4842dbf83655@iMac-de-los-BruGa-3.local.mail>
+Subject: DTE Attachment
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="--==_mimepart_55508529117b0_12d603fed4842dbf835bb";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_55508529117b0_12d603fed4842dbf835bb
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Cuerpo correo
+----==_mimepart_55508529117b0_12d603fed4842dbf835bb
+Content-Type: text/x-yaml;
+ charset=UTF-8;
+ filename=config.yml
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename=config.yml
+Content-ID: <5550852913176_12d603fed4842dbf83783@iMac-de-los-BruGa-3.local.mail>
+
+LS0tCiNkZWJ1ZzogdHJ1ZQpiaW5kX2FkZHJlc3M6IDEyNy4wLjAuMQpiaW5k
+X3BvcnQ6IDMwMDI0CnJldHVybl9ob3N0OiAxMjcuMC4wLjEKcmV0dXJuX3Bv
+cnQ6IDMwMDI1Cm1heF9jb25uZWN0aW9uczogMTAKZWxhc3RpY3NlYXJjaF9o
+b3N0OiAxMjcuMC4wLjEKZWxhc3RpY3NlYXJjaF9wb3J0OiA5MjAw
+
+----==_mimepart_55508529117b0_12d603fed4842dbf835bb--

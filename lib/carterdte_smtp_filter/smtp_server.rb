@@ -2,14 +2,17 @@ module CarterdteSmtpFilter
   
   class SmtpServer < MidiSmtpServer::Smtpd
     
-     def initialize( port = CarterdteSmtpFilter::Config::bind_port, host = CarterdteSmtpFilter::Config::bind_address, max_connections = 4, opts = {})
-       opts = { do_dns_reverse_lookup: false }
-       super
-     end
-    
     def start
-      
+      @port = CarterdteSmtpFilter::Config::bind_port
+      @host = CarterdteSmtpFilter::Config::bind_address
+      @maxConnections = CarterdteSmtpFilter::Config::max_connections.to_i
+      @logger = Logger.new('/dev/null') 
       super
+    end
+    
+    def on_message_data_event(ctx)
+      message = CarterdteSmtpFilter::Message.new(ctx[:message][:data])
+      message.return_email
     end
     
   end

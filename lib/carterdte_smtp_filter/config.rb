@@ -2,7 +2,7 @@ module CarterdteSmtpFilter
   
   module Config
     attr_accessor :config
-    OPTIONS = %w(bind_address bind_port return_host return_port elasticsearch_host elasticsearch_port)
+    OPTIONS = %w(bind_address bind_port return_host return_port elasticsearch_host elasticsearch_port max_connections debug)
     
     def self.parse(file = nil)
       @config = YAML.load_file(file)
