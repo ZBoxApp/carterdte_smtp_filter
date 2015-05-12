@@ -12,16 +12,17 @@ module CarterdteSmtpFilter
     
     def on_message_data_event(ctx)
       message = CarterdteSmtpFilter::Message.new(ctx[:message][:data])
+
+      # Save a copy when testing
+      # /tmp/carterdte_smtp_filter/<message-id>
+      message.save_tmp if CarterdteSmtpFilter::Config::testing
+
       # return the email back, and extract queue_id unless we are not 
       # working with Postfix
       message.return_email unless CarterdteSmtpFilter::Config::stand_alone
       
       # We send it to CarterDte App
       CarterdteSmtpFilter::ApiClient.push message.to_json if message.has_dte?
-      
-      # Save a copy when testing
-      # /tmp/carterdte_smtp_filter/<message-id>
-      message.save_tmp if CarterdteSmtpFilter::Config::testing
     end
     
     # get event before Connection
