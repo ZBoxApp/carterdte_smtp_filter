@@ -8,7 +8,7 @@ module CarterdteSmtpFilter
     end
    
     def self.push(message)
-      response = post({payload: message})  
+      post({payload: message})  
     end
    
     def self.api_user
@@ -31,7 +31,8 @@ module CarterdteSmtpFilter
         JSON.parse payload
         logger.info("Post #{payload} to #{url}")
         resource = RestClient::Resource.new url, api_user, api_password
-        response = resource.post payload, :content_type => :json, :accept => :json
+        return if CarterdteSmtpFilter::Config::testing
+        response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         logger.info("Api response #{response}")
       rescue Exception => e
         logger.error("#{e} - #{url}")
