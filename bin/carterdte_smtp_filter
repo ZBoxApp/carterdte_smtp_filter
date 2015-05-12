@@ -1,0 +1,66 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'carterdte_smtp_filter'
+require 'optparse'
+
+# Parsing options
+ARGV << '-h' if ARGV.empty?
+
+options = {}
+
+optparse = OptionParser.new do |opts|
+
+  opts.banner = "Usage: carterdte_smtp_filter --config [YAML Config File]"
+
+  opts.on("-cCONFIG", "--config=CONFIG", "Yaml Config File") do |o|
+    options[:config] = o
+  end
+  
+  opts.on("-h", "--help", "Prints this help") do
+   puts opts
+   exit
+  end
+  
+end
+
+optparse.parse!
+# We load the configuration
+if options[:config]
+  CarterdteSmtpFilter::Config.parse(options[:config])
+
+  logger = CarterdteSmtpFilter.logger
+  logger.info("#{Time.now}: Starting CarterDte SMTP Filter")
+
+  # Create a new server instance
+  server = CarterdteSmtpFilter::SmtpServer.new()
+
+  # Start the server
+  server.start
+
+  # Wait a second
+  sleep 1
+
+  # Run forever and ever
+  server.join
+
+  # setup exit code
+  
+end
+BEGIN {
+  at_exit {
+    # check to shutdown connection
+    if server
+      # Output for debug
+      puts("#{Time.now}: Shutdown CarterDte SMTP Filter...")
+      # gracefully connections down
+      server.shutdown
+      # check once if some connection(s) need(s) more time
+      sleep 2 unless server.connections == 0 
+      # stop all threads and connections
+      server.stop
+      puts("#{Time.now}: CarterDte SMTP Filter down!")
+    end
+    # Output for debug
+  }
+}

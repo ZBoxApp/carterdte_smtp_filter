@@ -32,17 +32,12 @@ module CarterdteSmtpFilter
         logger.info("Post #{payload} to #{url}")
         resource = RestClient::Resource.new url, api_user, api_password
         response = resource.post payload, :content_type => :json, :accept => :json
-        #response = restclient("post", url, api_user, api_password, api_host, payload).execute
+        logger.info("Api response #{response}")
       rescue Exception => e
         logger.error("#{e} - #{url}")
         response = false
       end
       response
-    end
-    
-    def self.restclient(method = "get", url = nil, user = nil, password = nil, payload = {}, headers = nil)
-      headers ||= { :accept => :json, :content_type => :json }
-      RestClient::Request.new(method: method, url: url, user: user, password: password, headers: headers, payload: payload)
     end
     
   end

@@ -10,6 +10,7 @@ module CarterdteSmtpFilter
       @email = Mail.read_from_string raw_data
       @dte = extract_dte
       @logger = CarterdteSmtpFilter.logger
+      @qid = nil
     end
     
     def extract_dte

@@ -16,9 +16,22 @@ Or install it yourself as:
 
     $ gem install carterdte_smtp_filter
 
-## Usage
+## Configuration
 
-TODO: Write usage instructions here
+```yaml
+bind_address: 127.0.0.1
+bind_port: 30024
+return_host: 127.0.0.1
+return_port: 30025
+max_connections: 10
+elasticsearch_host: 127.0.0.1
+elasticsearch_port: 9200
+api_user: pbruna@example.com
+api_password: 123456
+api_host: "api.dte.zboxapp.com"
+log_file: "./test/tmp/carterdte_smtp_filter.log"
+stand_alone: ""
+```
 
 ## Contributing
 
