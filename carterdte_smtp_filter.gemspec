@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Patricio Bruna"]
   spec.email         = ["pbruna@gmail.com"]
   spec.summary       = "Postfix SMTP Filter to parse DTE files to CarterDTE Platform"
-  spec.description   = spec.summary
+  spec.description   = "Description - #{spec.summary}"
   spec.homepage      = "https://github.com/ZBoxApp/carterdte_smtp_filter"
   spec.license       = "MIT"
 
@@ -18,16 +18,16 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'mail', ">= 2.6"
-  spec.add_dependency "midi-smtp-server", ">= 2.0"
-  spec.add_dependency 'xml-simple', ">= 1.1"
-  spec.add_dependency "rest-client", ">= 1.7"
+  spec.add_dependency 'mail', "~> 2.6"
+  spec.add_dependency "midi-smtp-server", "~> 2.0"
+  spec.add_dependency 'xml-simple', "~> 1.1"
+  spec.add_dependency "rest-client", "~> 1.7"
   
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "guard"
-  spec.add_development_dependency "guard-minitest"
-  spec.add_development_dependency "minitest-reporters"
+  spec.add_development_dependency "rake", "~> 10.4"
+  spec.add_development_dependency "guard", "~> 2.12"
+  spec.add_development_dependency "guard-minitest", "~> 2.4"
+  spec.add_development_dependency "minitest-reporters", "~> 1.0"
   spec.add_development_dependency "sinatra", "~> 1.4"
   spec.add_development_dependency "webmock", "~> 1.20"
 end
