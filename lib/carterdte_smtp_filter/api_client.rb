@@ -29,9 +29,9 @@ module CarterdteSmtpFilter
       begin
         # We make sure we are sending JSON
         JSON.parse payload
-        logger.info("Post #{payload} to #{url}")
         resource = RestClient::Resource.new url, api_user, api_password
         return if CarterdteSmtpFilter::Config::testing
+        logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
         response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         logger.info("Api response #{response}")
       rescue Exception => e
