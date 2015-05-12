@@ -55,6 +55,7 @@ module CarterdteSmtpFilter
     
     def save_tmp
       Dir.mkdir TMP_MESSAGE_DIR unless File.directory? TMP_MESSAGE_DIR
+      @logger.info("Saving File #{TMP_MESSAGE_DIR}/#{@email.message_id}.eml")
       File.open("#{TMP_MESSAGE_DIR}/#{@email.message_id}.eml", 'w') { |file| file.write(@raw_data) }
     end
     

@@ -2,16 +2,16 @@ module CarterdteSmtpFilter
   
   class Dte
    
-    VALID_NODES = %w(SetDTE Resultado)
-    attr_accessor :dte_hash
+    VALID_NODES = %w(EnvioDTE RespuestaDTE)
+    attr_accessor :dte_xml
    
     def initialize(xml_string)
-      @dte_hash = XmlSimple.xml_in xml_string
+      @dte_xml = Nokogiri::XML xml_string
       return false unless valid?
     end
     
     def valid?
-      (dte_hash.keys & VALID_NODES).any?
+      VALID_NODES.include? root_name
     end
     
     def envio?
@@ -25,6 +25,7 @@ module CarterdteSmtpFilter
     def to_json
       return JSON.generate({}) unless valid?
       JSON.generate({
+        folio: folio,
         rut_receptor: rut_receptor,
         rut_emisor: rut_emisor,
         msg_type: msg_type,
@@ -36,53 +37,54 @@ module CarterdteSmtpFilter
     end
     
     def root_name
-      (dte_hash.keys & VALID_NODES).first
+      dte_xml.root.name
     end
     
     def root_node
-      @dte_hash[root_name].first
+      @dte_xml[root_name].first
     end
     
     def get_data(data)
-      result = root_node["Caratula"].first[data].first if envio?
-      result = root_node["RecepcionEnvio"].first[data].first if respuesta?
-      return result.first if result.is_a? Array
-      result
+      @dte_xml.at_css(data).text
     end
     
     def msg_type
-      return "respuesta" if root_name == "Resultado"
-      return "envio" if root_name == "SetDTE"
+      return "respuesta" if root_name == "RespuestaDTE"
+      return "envio" if root_name == "EnvioDTE"
     end
     
     def setdte_id
-      return root_node["ID"] if envio?
-      get_data "EnvioDTEID"
+      return @dte_xml.at_css("SetDTE").attribute("ID").value if envio?
+      value = @dte_xml.at_css("EnvioDTEID")
+      value.nil? ? nil : value.text
     end
     
     def rut_emisor
-      get_data "RutEmisor"
+      get_data "RUTEmisor"
     end
     
     def rut_receptor
-      get_data "RutReceptor"
+      get_data "RUTRecep"
     end
     
     def dte_type
-      return root_node["Caratula"].first["SubTotDTE"].first["TpoDTE"].first if envio?
-      return root_node["RecepcionEnvio"].first["RecepcionDTE"].first["TipoDTE"].first if respuesta?
+      get_data "TipoDTE"
+    end
+    
+    def folio
+      get_data "Folio"
     end
     
     def fecha_emision
       time_stamp = get_data "TmstFirmaEnv" if envio?
-      time_stamp = root_node["Caratula"].first["TmstFirmaResp"].first if respuesta?
+      time_stamp = get_data "TmstFirmaResp" if respuesta?
       Time.parse(time_stamp).to_date
     end
     
     def fecha_recepcion
       return nil if envio?
-      time_stamp = get_data "FchRecep"
-      Time.parse(time_stamp).to_date
+      time_stamp = @dte_xml.at_css "FchRecep"
+      time_stamp.nil? ? nil : Time.parse(time_stamp.text).to_date
     end
     
   end

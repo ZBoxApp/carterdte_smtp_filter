@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?><RespuestaDTE xmlns="http://www.sii.cl/SiiDte" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+  <Resultado ID="ID_635670218106091797">
+    <Caratula version="1.0">
+      <RutResponde>78481770-9</RutResponde>
+      <RutRecibe>96726970-0</RutRecibe>
+      <IdRespuesta>8106091797</IdRespuesta>
+      <NroDetalles>1</NroDetalles>
+      <NmbContacto>Andr�s Raddatz</NmbContacto>
+      <FonoContacto>+56954059469</FonoContacto>
+      <MailContacto>c.soto@wyr.cl</MailContacto>
+      <TmstFirmaResp>2015-05-12T01:03:30</TmstFirmaResp>
+    </Caratula>
+    <ResultadoDTE>
+      <TipoDTE>33</TipoDTE>
+      <Folio>1970747</Folio>
+      <FchEmis>2015-05-11</FchEmis>
+      <RUTEmisor>96726970-0</RUTEmisor>
+      <RUTRecep>78481770-9</RUTRecep>
+      <MntTotal>153043</MntTotal>
+      <CodEnvio>8106091797</CodEnvio>
+      <EstadoDTE>0</EstadoDTE>
+      <EstadoDTEGlosa>Documento aceptado conforme</EstadoDTEGlosa>
+    </ResultadoDTE>
+  </Resultado><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI="#ID_635670218106091797"><Transforms><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>28bNEJHRE6LYUZiCNCjqFHmiESg=</DigestValue></Reference></SignedInfo><SignatureValue>
+VbReTbsDc9VQ4ijn36kG+ofCzZenA2TnCOSl9ErIVp5aRcThLVcaxA9wLIiI3vHg
+eP2JB+I25cDEheOiPD3MTDpxAJpuN5+x1dAgs8YQsRkRNYKPpZCOK87aj3RgP34p
+o1SY7otFVZX0SxcBqg9g4mVXsEe0r5kttFqHH2wG9+8=
+</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>
+rgrKNQKvjJR1++ruo3gDcyyu8rChzIReNgrTTr5sIobajyyR6ed1zXlseRTdqbK6
+A3XWk3kdHlIlvW95beIiUl67e57YHqMOoQE5+M33D8AZFTyqpXBu8vl9czgftzYq
+7D1NWQnhnvCkCUbUpl+Aln/G3pXip07cH66SCL/rU3E=
+</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>
+MIIF7DCCBNSgAwIBAgIKbx2f5QAAAACw4zANBgkqhkiG9w0BAQUFADCB0jELMAkG
+A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
+EwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9y
+aWRhZCBDZXJ0aWZpY2Fkb3JhMTAwLgYDVQQDEydFLUNFUlRDSElMRSBDQSBGSVJN
+QSBFTEVDVFJPTklDQSBTSU1QTEUxJzAlBgkqhkiG9w0BCQEWGHNjbGllbnRlc0Bl
+LWNlcnRjaGlsZS5jbDAeFw0xMzA2MjAxNzE3MDFaFw0xNjA2MTkxNzE3MDFaMIGr
+MQswCQYDVQQGEwJDTDEjMCEGA1UECBMaTUVUUk9QT0xJVEFOQSBERSBTQU5USUFH
+TyAxETAPBgNVBAcTCFNhbnRpYWdvMREwDwYDVQQKEwhHREUgUy5BLjEKMAgGA1UE
+CwwBKjEhMB8GA1UEAxMYQ3Jpc3RpYW4gUm9qYXMgR3V0aWVycmV6MSIwIAYJKoZI
+hvcNAQkBFhNjcm9qYXNnQGhvdG1haWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQCuCso1Aq+MlHX76u6jeANzLK7ysKHMhF42CtNOvmwihtqPLJHp53XN
+eWx5FN2psroDddaTeR0eUiW9b3lt4iJSXrt7ntgeow6hATn4zfcPwBkVPKqlcG7y
++X1zOB+3NirsPU1ZCeGe8KQJRtSmX4CWf8beleKnTtwfrpIIv+tTcQIDAQABo4IC
+azCCAmcwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIgtyDL4WTjGaF1Z0XguLc
+J4Hv7DxhgZrnFYav4BUCAWQCAQMwHQYDVR0OBBYEFMPMmCazNW4fT0FzaQQoXlBa
+mxEsMAsGA1UdDwQEAwIE8DAfBgNVHSMEGDAWgBR44T6f0hKzejyNzTAOU7NDKQez
+VTA+BgNVHR8ENzA1MDOgMaAvhi1odHRwOi8vY3JsLmUtY2VydGNoaWxlLmNsL2Vj
+ZXJ0Y2hpbGVjYUZFUy5jcmwwIwYDVR0RBBwwGqAYBggrBgEEAcEBAaAMFgoxMDk3
+NDM3Ny0xMCMGA1UdEgQcMBqgGAYIKwYBBAHBAQKgDBYKOTY5MjgxODAtNTCCAU0G
+A1UdIASCAUQwggFAMIIBPAYIKwYBBAHDUgUwggEuMC0GCCsGAQUFBwIBFiFodHRw
+Oi8vd3d3LmUtY2VydGNoaWxlLmNsL0NQUy5odG0wgfwGCCsGAQUFBwICMIHvHoHs
+AEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAEYAaQByAG0AYQAgAFMAaQBtAHAAbABl
+AC4AIABIAGEAIABzAGkAZABvACAAdgBhAGwAaQBkAGEAZABvACAAZQBuACAAZgBv
+AHIAbQBhACAAcAByAGUAcwBlAG4AYwBpAGEAbAAsACAAcQB1AGUAZABhAG4AZABv
+ACAAaABhAGIAaQBsAGkAdABhAGQAbwAgAGUAbAAgAEMAZQByAHQAaQBmAGkAYwBh
+AGQAbwAgAHAAYQByAGEAIAB1AHMAbwAgAHQAcgBpAGIAdQB0AGEAcgBpAG8wDQYJ
+KoZIhvcNAQEFBQADggEBACmohVhYRgL7/gtDYx0MJcfLS4fgF7lGFi6qrDmC4OLw
+4PPAsQBNxmgptLCzo1L5GNNZ16CIujZU9BGYJOYh6gDVZ2Sf1PC7gwpcdKcpP9fg
+FTlhtEMZZgQx+auurZa3DJAWn4xgmBSNV6JZj1gxCLgHlyGvaDVLu7WGlytX4CwA
+ZDBBz8v3wV/5zCz/w2YAeA45S0+3e6SEgDp1gKQn2aMwRoAYgOLekHFEMX80H4na
+ZprMNSpgWN6w6E4sO/vE8W7pNQFT7nMTU3AaFsfkt9muadFTpTAN3bzIDvQ+ik5B
+j4RImcu5qGNuDg3hE2/dfojZl+5dOnP0UkhhN22x+gU=
+</X509Certificate></X509Data></KeyInfo></Signature>
+</RespuestaDTE>

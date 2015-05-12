@@ -1,7 +1,7 @@
 require "midi-smtp-server"
 require "mail"
 require 'json'
-require 'xmlsimple'
+require 'nokogiri'
 require 'time'
 require 'date'
 require 'logger'
