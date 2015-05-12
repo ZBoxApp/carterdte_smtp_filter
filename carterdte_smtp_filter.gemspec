@@ -18,11 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'celluloid-io', ">= 0.16"
   spec.add_dependency 'mail', ">= 2.6"
   spec.add_dependency "midi-smtp-server", ">= 2.0"
-  spec.add_dependency "activerecord", ">= 4.2"
-  spec.add_dependency "mysql2", ">= 0.3"
   spec.add_dependency 'xml-simple', ">= 1.1"
   spec.add_dependency "rest-client", ">= 1.7"
   
