@@ -33,7 +33,7 @@ module CarterdteSmtpFilter
         from: @email.from,
         message_id: @email.message_id,
         cc: @email.cc,
-        date: @email.date.to_s,
+        sent_date: @email.date.to_s,
         qid: qid,
         dte: JSON.parse(@dte.to_json)
         })

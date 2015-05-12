@@ -30,7 +30,7 @@ class FakeApi < Sinatra::Base
   end
 
   
-  post '/dtes' do
+  post '/messages' do
     request.body.rewind
     data = JSON.parse request.body.read
     status = 200

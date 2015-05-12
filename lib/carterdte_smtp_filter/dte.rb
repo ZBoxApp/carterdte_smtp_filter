@@ -76,8 +76,7 @@ module CarterdteSmtpFilter
     end
     
     def fecha_emision
-      time_stamp = get_data "TmstFirmaEnv" if envio?
-      time_stamp = get_data "TmstFirmaResp" if respuesta?
+      time_stamp = get_data "FchEmis"
       Time.parse(time_stamp).to_date
     end
     

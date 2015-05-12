@@ -38,7 +38,7 @@ class TestMessage < Minitest::Test
     json = JSON.parse(message.to_json)
     assert_equal(message.email.to, json["to"])
     assert_equal(message.email.from, json["from"])
-    assert_equal(message.email.date.to_s, json["date"])
+    assert_equal(message.email.date.to_s, json["sent_date"])
     assert_equal("96529310-8", json["dte"]["rut_emisor"])
   end
 

@@ -66,9 +66,9 @@ class TestDte < Minitest::Test
   end
   
   def test_dte_fecha_emision
-    date_envio = Time.parse("2015-05-09T11:10:10").to_date
-    date_resultado = Time.parse("2015-05-09T12:30:11").to_date
-    date_problema = Time.parse("2015-05-12T01:03:30").to_date
+    date_envio = Date.parse("2015-05-09")
+    date_resultado = Date.parse("2015-05-11")
+    date_problema = Date.parse("2015-05-11")
     assert_equal(date_resultado, @dte_resultado.fecha_emision)
     assert_equal(date_envio, @dte_envio.fecha_emision)
     assert_equal(date_problema, @dte_problema.fecha_emision)

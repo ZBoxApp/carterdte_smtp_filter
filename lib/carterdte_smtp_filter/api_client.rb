@@ -24,7 +24,7 @@ module CarterdteSmtpFilter
     end
     
     def self.post(opts = {})
-      url = opts[:url] || "https://#{CarterdteSmtpFilter::Config::api_host}/dtes"
+      url = opts[:url] || "https://#{CarterdteSmtpFilter::Config::api_host}/messages"
       payload = opts[:payload] || {}
       begin
         # We make sure we are sending JSON
