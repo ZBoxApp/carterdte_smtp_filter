@@ -6,7 +6,7 @@ module CarterdteSmtpFilter
       @port = CarterdteSmtpFilter::Config::bind_port
       @host = CarterdteSmtpFilter::Config::bind_address
       @maxConnections = CarterdteSmtpFilter::Config::max_connections.to_i
-      @logger = Logger.new("/dev/null")
+      @logger = CarterdteSmtpFilter::Config::debug ? CarterdteSmtpFilter.logger : Logger.new("/dev/null")
       super
     end
     
