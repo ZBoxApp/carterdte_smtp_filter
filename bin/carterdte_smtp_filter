@@ -30,7 +30,7 @@ if options[:config]
   CarterdteSmtpFilter::Config.parse(options[:config])
 
   logger = CarterdteSmtpFilter.logger
-  logger.info("#{Time.now}: Starting CarterDte SMTP Filter")
+  logger.info("#{Time.now}: Starting CarterDte SMTP Filter v: #{CarterdteSmtpFilter::VERSION}")
 
   # Create a new server instance
   server = CarterdteSmtpFilter::SmtpServer.new()

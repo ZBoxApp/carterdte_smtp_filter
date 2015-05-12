@@ -28,7 +28,7 @@ class TestMessage < Minitest::Test
   def test_message_should_save_server_queueid_response_if_any
     raw_mail = File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     message = CarterdteSmtpFilter::Message.new raw_mail
-    message.process
+    message.return_email
     assert_equal(message.response.string.split(/\s+/).last, message.qid)  
   end
   
@@ -61,6 +61,12 @@ class TestMessage < Minitest::Test
   def test_message_dte_should_be_a_dte_object
     message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     assert_equal(CarterdteSmtpFilter::Dte, message.dte.class)
+  end
+  
+  def test_save_tmp_should_make_tmp_dir_if_it_no_exist
+    message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
+    message.save_tmp
+    assert(File.file?("/tmp/carterdte_smtp_filter/#{message.email.message_id}.eml"), "Failure message.")
   end
   
     
