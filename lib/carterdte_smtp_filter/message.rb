@@ -17,7 +17,7 @@ module CarterdteSmtpFilter
     
     def extract_dte
       return false unless @email.attachments.any?
-      xml_attachments = @email.attachments.select {|m| m.sub_type == "xml"}
+      xml_attachments = @email.attachments.select {|m| File.extname(m.filename) == ".xml"}
       file = xml_attachments.any? ? xml_attachments.first : false
       return false unless file
       CarterdteSmtpFilter::Dte.new file.body.decoded
