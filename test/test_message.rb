@@ -39,7 +39,7 @@ class TestMessage < Minitest::Test
     assert_equal(message.email.to, json["to"])
     assert_equal(message.email.from, json["from"])
     assert_equal(message.email.date.to_s, json["sent_date"])
-    assert_equal("96529310-8", json["dte"]["rut_emisor"])
+    assert_equal("96529310-8", json["dte_attributes"]["rut_emisor"])
   end
 
   def test_extract_dte_should_return_false_if_no_attachments
