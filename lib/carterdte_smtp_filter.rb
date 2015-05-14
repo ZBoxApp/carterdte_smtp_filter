@@ -16,6 +16,7 @@ require "carterdte_smtp_filter/message"
 require "carterdte_smtp_filter/dte"
 require "carterdte_smtp_filter/api_client"
 require "carterdte_smtp_filter/spool"
+require "carterdte_smtp_filter/spool_manager"
 
 module CarterdteSmtpFilter
   

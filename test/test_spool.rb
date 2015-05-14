@@ -38,4 +38,5 @@ class TestSpool < Minitest::Test
   end
   
   
+  
 end

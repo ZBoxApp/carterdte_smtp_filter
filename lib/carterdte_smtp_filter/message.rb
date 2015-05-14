@@ -6,13 +6,13 @@ module CarterdteSmtpFilter
     
     attr_accessor :raw_data, :return_qid, :email, :response, :dte, :qid
     
-    def initialize(raw_data)
+    def initialize(raw_data, qid = nil)
       set_mail_defaults
       @raw_data = raw_data
       @email = Mail.read_from_string raw_data
       @logger = CarterdteSmtpFilter.logger
       @dte = extract_dte
-      @qid = generate_qid
+      @qid = qid || generate_qid
       @return_qid = nil
     end
     
