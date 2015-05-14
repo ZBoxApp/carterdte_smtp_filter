@@ -14,7 +14,7 @@ class TestConfig < Minitest::Test
     assert_equal("pbruna@example.com", CarterdteSmtpFilter::Config::api_user)
     assert_equal("123456", CarterdteSmtpFilter::Config::api_password)
     assert_equal("api.dte.zboxapp.com", CarterdteSmtpFilter::Config::api_host)
-    assert_equal("./test/tmp/carterdte_smtp_filter.log", CarterdteSmtpFilter::Config::log_file)
+    assert_equal("/tmp/carterdte_smtp_filter.log", CarterdteSmtpFilter::Config::log_file)
   end
   
 end

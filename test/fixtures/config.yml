@@ -1,5 +1,5 @@
 ---
-#debug: true
+debug: true
 bind_address: 127.0.0.1
 bind_port: 30024
 return_host: 127.0.0.1
@@ -10,5 +10,5 @@ elasticsearch_port: 9200
 api_user: pbruna@example.com
 api_password: 123456
 api_host: "api.dte.zboxapp.com"
-log_file: "./test/tmp/carterdte_smtp_filter.log"
+log_file: "/tmp/carterdte_smtp_filter.log"
 use_https: true

@@ -9,7 +9,6 @@ module CarterdteSmtpFilter
     end
     
     def perform(message)
-      logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
       push message
     end
    
@@ -30,14 +29,15 @@ module CarterdteSmtpFilter
       CarterdteSmtpFilter::Config::api_password
     end
     
-    def post(url: nil, payload: nil)
+    def post(opts = {})
       protocol = CarterdteSmtpFilter::Config::use_https ? "https" : "http"
-      url ||= "#{protocol}://#{CarterdteSmtpFilter::Config::api_host}/messages"
-      payload ||= {}
+      url = opts[:url] || "#{protocol}://#{CarterdteSmtpFilter::Config::api_host}/messages"
+      payload = opts[:payload] || {}
       begin
         # We make sure we are sending JSON
         JSON.parse payload
         resource = RestClient::Resource.new url, api_user, api_password
+        logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
         response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         logger.info("Api response #{response}")
       rescue Exception => e
