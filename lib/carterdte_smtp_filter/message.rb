@@ -20,7 +20,7 @@ module CarterdteSmtpFilter
       xml_attachments = @email.attachments.select {|m| File.extname(m.filename) == ".xml"}
       file = xml_attachments.any? ? xml_attachments.first : false
       return false unless file
-      CarterdteSmtpFilter::Dte.new file.body.decoded
+      Dte.new file.body.decoded
     end
     
     def has_dte?
@@ -28,9 +28,9 @@ module CarterdteSmtpFilter
     end
     
     def to_json
-      JSON.generate({
-        to: @email.to,
-        from: @email.from,
+      JSON.generate(message: {
+        to: @email.to.first,
+        from: @email.from.first,
         message_id: @email.message_id,
         cc: @email.cc,
         sent_date: @email.date.to_s,
@@ -41,7 +41,7 @@ module CarterdteSmtpFilter
     
     def set_mail_defaults
       Mail.defaults do
-        delivery_method :smtp, address: CarterdteSmtpFilter::Config::return_host, port: CarterdteSmtpFilter::Config::return_port, 
+        delivery_method :smtp, address: Config::return_host, port: Config::return_port, 
         return_response: true, enable_starttls_auto: false
       end
     end

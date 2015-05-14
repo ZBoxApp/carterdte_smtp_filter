@@ -23,7 +23,7 @@ module CarterdteSmtpFilter
       
       # We send it to CarterDte App
       @logger.debug("Message DTE: #{message.dte}") if CarterdteSmtpFilter::Config::debug
-      CarterdteSmtpFilter::ApiClient.push message.to_json if message.has_dte?
+      CarterdteSmtpFilter::ApiClient.new.async.perform message.to_json if message.has_dte?
     end
     
     # get event before Connection

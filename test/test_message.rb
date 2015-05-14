@@ -36,10 +36,10 @@ class TestMessage < Minitest::Test
     message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     assert(JSON.parse(message.to_json), "No JSON")
     json = JSON.parse(message.to_json)
-    assert_equal(message.email.to, json["to"])
-    assert_equal(message.email.from, json["from"])
-    assert_equal(message.email.date.to_s, json["sent_date"])
-    assert_equal("96529310-8", json["dte_attributes"]["rut_emisor"])
+    assert_equal(message.email.to.first, json["message"]["to"])
+    assert_equal(message.email.from.first, json["message"]["from"])
+    assert_equal(message.email.date.to_s, json["message"]["sent_date"])
+    assert_equal("96529310-8", json["message"]["dte_attributes"]["rut_emisor"])
   end
 
   def test_extract_dte_should_return_false_if_no_attachments

@@ -11,3 +11,4 @@ api_user: pbruna@example.com
 api_password: 123456
 api_host: "api.dte.zboxapp.com"
 log_file: "./test/tmp/carterdte_smtp_filter.log"
+use_https: true

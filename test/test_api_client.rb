@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TestApiClient < Minitest::Test
-  
+  require 'sucker_punch/testing/inline'
 
   def setup
     CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
@@ -11,7 +11,7 @@ class TestApiClient < Minitest::Test
   end
   
   def test_push_should_return_false_if_message_is_not_json
-    response = CarterdteSmtpFilter::ApiClient.push "hola"
+    response = CarterdteSmtpFilter::ApiClient.new.push "hola"
     assert(!response, "Failure message.")
   end
     
@@ -22,19 +22,19 @@ class TestApiClient < Minitest::Test
   end
   
   def test_post_should_workout_unauthorized
-    response = CarterdteSmtpFilter::ApiClient.post({url: "#{@api_url}/api/v1/denied" })
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/api/v1/denied" })
     assert(!response, "Failure message.")
   end
   
   def test_post_should_workout_application_error
-    response = CarterdteSmtpFilter::ApiClient.post({url: "#{@api_url}/api/v1/app_error" })
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/api/v1/app_error" })
     assert(!response, "Failure message.")
   end
   
   def test_post_should_return_json
     hash = {dte_type: 33, msg_type: "envio"}
-    json = JSON.generate hash
-    response = CarterdteSmtpFilter::ApiClient.post({payload: json})
+    message = JSON.generate hash
+    response = CarterdteSmtpFilter::ApiClient.new.async.perform(message)
     new_hash = JSON.parse response
     assert_equal("123456", new_hash["id"])
     assert_equal(hash[:dte_type], new_hash["dte_type"])

@@ -1,37 +1,43 @@
 module CarterdteSmtpFilter
   
-  module ApiClient
+  class ApiClient
     require 'rest-client'
+    include SuckerPunch::Job
     
-    def self.logger
+    def logger
       CarterdteSmtpFilter.logger
     end
+    
+    def perform(message)
+      logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
+      push message
+    end
    
-    def self.push(message)
+    def push(message)
+      return if CarterdteSmtpFilter::Config::testing
       post({payload: message})  
     end
    
-    def self.api_user
+    def api_user
       CarterdteSmtpFilter::Config::api_user
     end
     
-    def self.api_host
+    def api_host
       CarterdteSmtpFilter::Config::api_host
     end
     
-    def self.api_password
+    def api_password
       CarterdteSmtpFilter::Config::api_password
     end
     
-    def self.post(opts = {})
-      url = opts[:url] || "https://#{CarterdteSmtpFilter::Config::api_host}/messages"
-      payload = opts[:payload] || {}
+    def post(url: nil, payload: nil)
+      protocol = CarterdteSmtpFilter::Config::use_https ? "https" : "http"
+      url ||= "#{protocol}://#{CarterdteSmtpFilter::Config::api_host}/messages"
+      payload ||= {}
       begin
         # We make sure we are sending JSON
         JSON.parse payload
         resource = RestClient::Resource.new url, api_user, api_password
-        return if CarterdteSmtpFilter::Config::testing
-        logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
         response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         logger.info("Api response #{response}")
       rescue Exception => e

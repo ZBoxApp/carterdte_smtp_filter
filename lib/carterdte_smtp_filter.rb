@@ -6,6 +6,7 @@ require 'time'
 require 'date'
 require 'logger'
 require 'rest-client'
+require 'sucker_punch'
 
 require "carterdte_smtp_filter/version"
 require "carterdte_smtp_filter/config"

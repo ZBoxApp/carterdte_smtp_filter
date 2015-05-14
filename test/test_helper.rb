@@ -12,10 +12,10 @@ require 'fake_api'
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
 
 # Only log Celluloid errors
-#Celluloid.logger.level = Logger::ERROR
+Celluloid.logger.level = Logger::ERROR
 
 
-#CarterDteSmtp::Config.parse("./test/fixtures/config.yml")
+#CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
 
 def check_imap()
   require "mail"
