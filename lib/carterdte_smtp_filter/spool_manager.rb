@@ -8,6 +8,7 @@ module CarterdteSmtpFilter
     end
     
     def perform()
+      logger.info("Checking queued files...")
       queued_files.each do |qf|
         resend_message qf
       end

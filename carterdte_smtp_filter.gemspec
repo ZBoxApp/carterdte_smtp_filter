@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bundler", "~> 1.6"
   spec.add_dependency "nokogiri", "~> 1.6"
   spec.add_dependency 'sucker_punch', '~> 1.0'
+  spec.add_dependency 'rufus-scheduler', '~> 3.0'
   
   spec.add_development_dependency "rake", "~> 10.4"
   spec.add_development_dependency "guard", "~> 2.12"

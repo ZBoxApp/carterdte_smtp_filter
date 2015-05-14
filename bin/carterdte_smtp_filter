@@ -33,7 +33,20 @@ if options[:config]
   logger.info("#{Time.now}: Starting CarterDte SMTP Filter v: #{CarterdteSmtpFilter::VERSION}")
 
   # Create Spool directory
-  CarterdteSmtpFilter::SpoolDir.setup
+  CarterdteSmtpFilter::Spool.directory_setup
+  
+  # Create a new Spool Manager
+  spool_manager = CarterdteSmtpFilter::SpoolManager.new
+  
+  # Create a Rufus Scheduler
+  # https://github.com/jmettraux/rufus-scheduler
+  
+  scheduler = Rufus::Scheduler.new
+  
+  # Process de Queue directory every 10 seconds
+  scheduler.every '10s' do
+    spool_manager.async.perform
+  end
 
   # Create a new server instance
   server = CarterdteSmtpFilter::SmtpServer.new()
@@ -45,6 +58,7 @@ if options[:config]
   sleep 1
 
   # Run forever and ever
+  scheduler.join
   server.join
 
   # setup exit code
