@@ -10,9 +10,13 @@ module CarterdteSmtpFilter
       super
     end
     
+    def carterdte_logger
+      CarterdteSmtpFilter.logger
+    end
+    
     def on_message_data_event(ctx)
       message = CarterdteSmtpFilter::Message.new(ctx[:message][:data])
-
+      carterdte_logger.info("Processing message: #{message.qid}")
       # Save a copy when testing
       # /tmp/carterdte_smtp_filter/<message-id>
       message.save_tmp if CarterdteSmtpFilter::Config::testing
@@ -23,17 +27,17 @@ module CarterdteSmtpFilter
       
       # We send it to CarterDte App
       @logger.debug("Message DTE: #{message.dte}") if CarterdteSmtpFilter::Config::debug
-      CarterdteSmtpFilter::ApiClient.new.async.perform message.to_json if message.has_dte?
+      CarterdteSmtpFilter::ApiClient.new.async.perform message if message.has_dte?
     end
     
     # get event before Connection
     def on_connect_event(ctx)
-      CarterdteSmtpFilter.logger.info("Connection from #{ctx[:server][:remote_ip]}")
+      carterdte_logger.info("Connection from #{ctx[:server][:remote_ip]}")
     end
 
     # get event before DISONNECT
     def on_disconnect_event(ctx)
-      CarterdteSmtpFilter.logger.info("Disconnect from #{ctx[:server][:remote_ip]}")
+      carterdte_logger.info("Disconnect from #{ctx[:server][:remote_ip]}")
     end
     
   end

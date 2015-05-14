@@ -9,12 +9,27 @@ module CarterdteSmtpFilter
     end
     
     def perform(message)
-      push message
+      push message if valid?(message)
     end
    
-    def push(message)
-      return if CarterdteSmtpFilter::Config::testing
-      post({payload: message})  
+    def push(message, url = nil)
+      response = post({payload: message.to_json, url: url})
+      return response if response
+      message.enqueue
+    end
+    
+    def valid?(message)
+      return false if CarterdteSmtpFilter::Config::testing
+      is_json?(message.to_json)
+    end
+    
+    def is_json?(message)
+      begin
+        result = JSON.parse message
+      rescue Exception => e
+        result = false
+      end
+      result.is_a? Hash
     end
    
     def api_user
@@ -34,15 +49,16 @@ module CarterdteSmtpFilter
       url = opts[:url] || "#{protocol}://#{CarterdteSmtpFilter::Config::api_host}/messages"
       payload = opts[:payload] || {}
       begin
-        # We make sure we are sending JSON
-        JSON.parse payload
         resource = RestClient::Resource.new url, api_user, api_password
         logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
         response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         logger.info("Api response #{response}")
       rescue Exception => e
-        logger.error("#{e} - #{url}")
-        response = false
+        logger.error("#{e} #{e.http_code} - #{url}")
+        
+        # Esto significa que se trato de enviar un mensaje duplicado
+        # Por lo tanto no se debe considerar como un fallo de envio
+        response = e.http_code == 422 ? true : false
       end
       response
     end

@@ -18,6 +18,13 @@ class TestMessage < Minitest::Test
     @return_stmp.stop
   end
   
+  def test_message_generate_qid_should_generate_a_valid_qid_in_hex_value
+    raw_mail = File.open("./test/fixtures/mail.tmp", "rb").read
+    message = CarterdteSmtpFilter::Message.new raw_mail
+    qid = message.generate_qid
+    assert(qid =~ /^[0-9A-F]+$/ , "Failure message.")
+  end
+  
   def test_message_should_save_server_response_when_returning_email
     raw_mail = File.open("./test/fixtures/mail.tmp", "rb").read
     message = CarterdteSmtpFilter::Message.new raw_mail
@@ -29,7 +36,7 @@ class TestMessage < Minitest::Test
     raw_mail = File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     message = CarterdteSmtpFilter::Message.new raw_mail
     message.return_email
-    assert_equal(message.response.string.split(/\s+/).last, message.qid)  
+    assert_equal(message.response.string.split(/\s+/).last, message.return_qid)  
   end
   
   def test_message_to_json_should_return_json_object_with_message_metada
@@ -40,6 +47,7 @@ class TestMessage < Minitest::Test
     assert_equal(message.email.from.first, json["message"]["from"])
     assert_equal(message.email.date.to_s, json["message"]["sent_date"])
     assert_equal("96529310-8", json["message"]["dte_attributes"]["rut_emisor"])
+    assert(json["message"]["qid"])
   end
 
   def test_extract_dte_should_return_false_if_no_attachments
@@ -67,6 +75,19 @@ class TestMessage < Minitest::Test
     message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     message.save_tmp
     assert(File.file?("/tmp/carterdte_smtp_filter/#{message.email.message_id}.eml"), "Failure message.")
+  end
+  
+  def test_message_queue_file_should_return_the_full_path_of_the_queue_file
+    message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
+    full_path = "#{CarterdteSmtpFilter::Config::spool_directory}/#{message.qid.split(//).first}/#{message.qid}"
+    assert_equal(full_path, message.queue_file)
+  end  
+  
+  def test_message_enqueue_must_create_a_file_with_qid_as_name
+    CarterdteSmtpFilter::Spool.directory_setup
+    message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/mail_with_dte.eml", "rb").read
+    message.enqueue
+    assert(File.file?("#{message.queue_file}"), "Failure message.")
   end
   
     

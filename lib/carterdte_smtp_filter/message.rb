@@ -4,7 +4,7 @@ module CarterdteSmtpFilter
     
     TMP_MESSAGE_DIR = "/tmp/carterdte_smtp_filter"
     
-    attr_accessor :raw_data, :qid, :email, :response, :dte
+    attr_accessor :raw_data, :return_qid, :email, :response, :dte, :qid
     
     def initialize(raw_data)
       set_mail_defaults
@@ -12,7 +12,22 @@ module CarterdteSmtpFilter
       @email = Mail.read_from_string raw_data
       @logger = CarterdteSmtpFilter.logger
       @dte = extract_dte
-      @qid = nil
+      @qid = generate_qid
+      @return_qid = nil
+    end
+    
+    def queue_file
+      queue_sub_dir = qid.split(//).first
+      "#{Config::spool_directory}/#{queue_sub_dir}/#{qid}"
+    end
+    
+    def enqueue
+      @logger.info("Queueing message #{qid} - #{queue_file}")
+      begin
+        File.open("#{queue_file}", 'w') { |file| file.write(@raw_data) }  
+      rescue Exception => e
+        @logger.info("Could not save #{queue_file} - #{e}")
+      end
     end
     
     def extract_dte
@@ -23,6 +38,10 @@ module CarterdteSmtpFilter
       Dte.new file.body.decoded
     end
     
+    def generate_qid
+      (("A".."F").to_a + (0..9).to_a).sample(11).join("")
+    end
+    
     def has_dte?
       @dte ? true : false
     end
@@ -31,10 +50,11 @@ module CarterdteSmtpFilter
       JSON.generate(message: {
         to: @email.to.first,
         from: @email.from.first,
+        qid: @qid,
         message_id: @email.message_id,
         cc: @email.cc,
         sent_date: @email.date.to_s,
-        qid: qid,
+        return_qid: @return_qid,
         dte_attributes: JSON.parse(@dte.to_json)
         })
     end
@@ -50,7 +70,7 @@ module CarterdteSmtpFilter
       return false unless response.status == "250"
       # We suppose the string is like "250 2.0.0 Ok: queued as J5D0AWOR4F8\n"
       return false unless /Ok: queued as/.match response.string
-      @qid = response.string.split(/\s+/).last
+      @return_qid = response.string.split(/\s+/).last
     end
     
     def save_tmp

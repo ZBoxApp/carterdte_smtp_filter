@@ -11,7 +11,7 @@ class TestApiClient < Minitest::Test
   end
   
   def test_push_should_return_false_if_message_is_not_json
-    response = CarterdteSmtpFilter::ApiClient.new.push "hola"
+    response = CarterdteSmtpFilter::ApiClient.new.async.perform "hola"
     assert(!response, "Failure message.")
   end
     
@@ -32,12 +32,26 @@ class TestApiClient < Minitest::Test
   end
   
   def test_post_should_return_json
-    hash = {dte_type: 33, msg_type: "envio"}
-    message = JSON.generate hash
+    raw_mail = File.open("./test/fixtures/mail_with_dte.eml", "rb").read
+    message = CarterdteSmtpFilter::Message.new raw_mail
     response = CarterdteSmtpFilter::ApiClient.new.async.perform(message)
     new_hash = JSON.parse response
-    assert_equal("123456", new_hash["id"])
-    assert_equal(hash[:dte_type], new_hash["dte_type"])
+    # assert_equal("123456", new_hash["id"])
+    # assert_equal(hash[:dte_type], new_hash["dte_type"])
   end
+  
+  def test_post_duplicated_message_should_return_true
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/messages/uniq" })
+    assert(response, "Failure message.")
+  end
+  
+  def test_should_save_queue_file_if_negative_response
+    CarterdteSmtpFilter::Spool.directory_setup
+    raw_mail = File.open("./test/fixtures/mail_with_dte.eml", "rb").read
+    message = CarterdteSmtpFilter::Message.new raw_mail
+    CarterdteSmtpFilter::ApiClient.new.push(message, "#{@api_url}/api/v1/app_error")
+    assert(File.file?("#{message.queue_file}"), "Failure message.")
+  end
+  
     
 end

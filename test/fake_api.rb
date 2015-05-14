@@ -38,6 +38,11 @@ class FakeApi < Sinatra::Base
     JSON.generate(data)
   end
   
+  post '/messages/uniq' do
+    status 422
+    ""
+  end
+  
   private
 
   def authenticate(env)

@@ -15,7 +15,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progr
 Celluloid.logger.level = Logger::ERROR
 
 
-#CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
+CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
 
 def check_imap()
   require "mail"
@@ -74,7 +74,7 @@ class ReturnSmtp < MidiSmtpServer::Smtpd
   attr_accessor :mail
 
   def start
-    @logger = Logger.new('/dev/null')
+    @logger = CarterdteSmtpFilter::Config::debug ? CarterdteSmtpFilter.logger : Logger.new("/dev/null")
     @port = CarterdteSmtpFilter::Config::return_port
     @host = CarterdteSmtpFilter::Config::return_host
     super
