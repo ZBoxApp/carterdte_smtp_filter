@@ -45,8 +45,7 @@ module CarterdteSmtpFilter
     end
     
     def post(opts = {})
-      protocol = CarterdteSmtpFilter::Config::use_https ? "https" : "http"
-      url = opts[:url] || "#{protocol}://#{CarterdteSmtpFilter::Config::api_host}/messages"
+      url = opts[:url] || CarterdteSmtpFilter::Config::api_url
       payload = opts[:payload] || {}
       begin
         resource = RestClient::Resource.new url, api_user, api_password

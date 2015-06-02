@@ -20,7 +20,7 @@ class TestConfig < Minitest::Test
     assert_equal(@config["return_port"], CarterdteSmtpFilter::Config::return_port)
     assert_equal(@config["api_user"], CarterdteSmtpFilter::Config::api_user)
     assert_equal(@config["api_password"], CarterdteSmtpFilter::Config::api_password)
-    assert_equal(@config["api_host"], CarterdteSmtpFilter::Config::api_host)
+    assert_equal(@config["api_url"], CarterdteSmtpFilter::Config::api_url)
     assert_equal(@config["log_file"], CarterdteSmtpFilter::Config::log_file)
   end
   

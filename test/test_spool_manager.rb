@@ -4,8 +4,8 @@ class TestSpoolManager < Minitest::Test
   require 'sucker_punch/testing/inline'
   
   def setup
-    @api_host = CarterdteSmtpFilter::Config::api_host
-    @api_url = "http://#{@api_host}"
+    @api_host = "api.dte.zboxapp.com"
+    @api_url = CarterdteSmtpFilter::Config::api_url
     stub_request(:any, /#{@api_host}/).to_rack(FakeApi)
     CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
     CarterdteSmtpFilter::Spool.directory_setup

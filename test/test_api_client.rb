@@ -5,9 +5,9 @@ class TestApiClient < Minitest::Test
 
   def setup
     CarterdteSmtpFilter::Config.parse("./test/fixtures/config.yml")
-    @api_host = CarterdteSmtpFilter::Config::api_host
-    @api_url = "http://#{@api_host}"
-    stub_request(:any, /#{@api_host}/).to_rack(FakeApi)
+    @api_host = "api.dte.zboxapp.com"
+    @api_url = CarterdteSmtpFilter::Config::api_url
+    stub_request(:any, /api.dte.zboxapp.com/).to_rack(FakeApi)
   end
   
   def test_push_should_return_false_if_message_is_not_json
@@ -22,12 +22,12 @@ class TestApiClient < Minitest::Test
   end
   
   def test_post_should_workout_unauthorized
-    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/api/v1/denied" })
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "http://#{@api_host}/api/v1/denied" })
     assert(!response, "Failure message.")
   end
   
   def test_post_should_workout_application_error
-    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/api/v1/app_error" })
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "http://#{@api_host}/api/v1/app_error" })
     assert(!response, "Failure message.")
   end
   
@@ -41,7 +41,7 @@ class TestApiClient < Minitest::Test
   end
   
   def test_post_duplicated_message_should_return_true
-    response = CarterdteSmtpFilter::ApiClient.new.post({url: "#{@api_url}/messages/uniq" })
+    response = CarterdteSmtpFilter::ApiClient.new.post({url: "http://#{@api_host}/messages/uniq" })
     assert(response, "Failure message.")
   end
   
@@ -49,7 +49,7 @@ class TestApiClient < Minitest::Test
     CarterdteSmtpFilter::Spool.directory_setup
     raw_mail = File.open("./test/fixtures/mail_with_dte.eml", "rb").read
     message = CarterdteSmtpFilter::Message.new raw_mail
-    CarterdteSmtpFilter::ApiClient.new.push(message, "#{@api_url}/api/v1/app_error")
+    CarterdteSmtpFilter::ApiClient.new.push(message, "http://#{@api_host}/api/v1/app_error")
     assert(File.file?("#{message.queue_file}"), "Failure message.")
   end
   
