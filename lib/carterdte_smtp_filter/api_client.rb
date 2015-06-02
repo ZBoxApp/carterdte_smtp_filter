@@ -51,7 +51,7 @@ module CarterdteSmtpFilter
         resource = RestClient::Resource.new url, api_user, api_password
         logger.debug("Post #{payload} to #{url}") if CarterdteSmtpFilter::Config::debug
         response = resource.post payload, :content_type => :json, :accept => :json, :verify_ssl => OpenSSL::SSL::VERIFY_NONE
-        logger.info("Api response #{response}")
+        logger.debug("Api response #{response}")
       rescue Exception => e
         logger.error("#{e} #{e.http_code} - #{url}")
         
