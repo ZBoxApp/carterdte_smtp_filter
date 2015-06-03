@@ -47,6 +47,8 @@ class TestMessage < Minitest::Test
     assert_equal(message.email.from.first, json["message"]["from"])
     assert_equal(message.email.date.to_s, json["message"]["sent_date"])
     assert_equal("96529310-8", json["message"]["dte_attributes"]["rut_emisor"])
+    assert_equal("96529310-8", json["message"]["rut_emisor"])
+    assert(json["message"]["rut_receptor"], "No tiene receptor")
     assert(json["message"]["qid"])
   end
 

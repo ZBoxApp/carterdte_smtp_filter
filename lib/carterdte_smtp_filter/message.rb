@@ -55,6 +55,8 @@ module CarterdteSmtpFilter
         cc: @email.cc,
         sent_date: @email.date.to_s,
         return_qid: @return_qid,
+        rut_receptor: @dte.rut_receptor,
+        rut_emisor: @dte.rut_emisor,
         dte_attributes: JSON.parse(@dte.to_json)
         })
     end
