@@ -44,7 +44,7 @@ if options[:config]
   scheduler = Rufus::Scheduler.new
   
   # Process de Queue directory every 10 seconds
-  scheduler.every '10s' do
+  scheduler.every '30s' do
     spool_manager.async.perform
   end
 
