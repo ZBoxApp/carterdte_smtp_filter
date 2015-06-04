@@ -45,7 +45,9 @@ module CarterdteSmtpFilter
     end
     
     def get_data(data)
-      @dte_xml.at_css(data).text
+      el = @dte_xml.at_css(data)
+      return el.text unless el.nil?
+      ""
     end
     
     def msg_type
