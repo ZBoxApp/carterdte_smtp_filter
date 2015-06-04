@@ -46,8 +46,8 @@ module CarterdteSmtpFilter
     
     def get_data(data)
       el = @dte_xml.at_css(data)
-      return el.text unless el.nil?
-      ""
+      return nil if el.nil?
+      el.text
     end
     
     def msg_type
@@ -79,7 +79,7 @@ module CarterdteSmtpFilter
     
     def fecha_emision
       time_stamp = get_data "FchEmis"
-      Time.parse(time_stamp).to_date
+      time_stamp.nil? ? nil : Time.parse(time_stamp).to_date
     end
     
     def fecha_recepcion
