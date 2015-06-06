@@ -15,7 +15,7 @@ module CarterdteSmtpFilter
     end
     
     def on_message_data_event(ctx)
-      message = CarterdteSmtpFilter::Message.new(ctx[:envelope], ctx[:message][:data])
+      message = CarterdteSmtpFilter::Message.new(ctx[:message][:data], ctx[:envelope])
       carterdte_logger.info("Processing message: #{message.qid}")
       # Save a copy when testing
       # /tmp/carterdte_smtp_filter/<message-id>
