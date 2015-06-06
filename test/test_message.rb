@@ -92,5 +92,11 @@ class TestMessage < Minitest::Test
     assert(File.file?("#{message.queue_file}"), "Failure message.")
   end
   
+  def test_should_work_with_corrupted_to_fields
+    message = CarterdteSmtpFilter::Message.new File.open("./test/fixtures/to_in_brackets.eml", "rb").read
+    message.return_email
+    assert_equal(message.response.string.split(/\s+/).last, message.return_qid)  
+  end
+  
     
 end

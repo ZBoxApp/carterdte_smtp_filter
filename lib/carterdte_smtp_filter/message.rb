@@ -6,14 +6,21 @@ module CarterdteSmtpFilter
     
     attr_accessor :raw_data, :return_qid, :email, :response, :dte, :qid
     
-    def initialize(raw_data, qid = nil)
+    def initialize(raw_data, envelope = nil, qid = nil)
       set_mail_defaults
       @raw_data = raw_data
-      @email = Mail.read_from_string raw_data
+      @email = parse_email(envelope)
       @logger = CarterdteSmtpFilter.logger
       @dte = extract_dte
       @qid = qid || generate_qid
       @return_qid = nil
+    end
+    
+    def parse_email(envelope)
+      email = Mail.read_from_string raw_data
+      email.from = envelope[:from] unless envelope.nil?
+      email.from = envelope[:to] unless envelope.nil?
+      email
     end
     
     def queue_file

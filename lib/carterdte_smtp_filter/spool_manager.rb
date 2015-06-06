@@ -17,7 +17,7 @@ module CarterdteSmtpFilter
     def resend_message(file_path)
       qid = queue_id file_path
       logger.info("Resending #{qid} - #{file_path}")
-      message = CarterdteSmtpFilter::Message.new(File.read(file_path), qid)
+      message = CarterdteSmtpFilter::Message.new(File.read(file_path), nil, qid)
       FileUtils.rm file_path
       CarterdteSmtpFilter::ApiClient.new.async.perform message
       message

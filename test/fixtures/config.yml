@@ -12,3 +12,4 @@ api_password: 123456
 api_url: "http://api.dte.zboxapp.com/dte_messages"
 log_file: "./test/tmp/carterdte_smtp_filter.log"
 spool_directory: "./test/tmp/spool"
+testing: true
