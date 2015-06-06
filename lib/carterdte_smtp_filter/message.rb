@@ -8,7 +8,7 @@ module CarterdteSmtpFilter
     
     def initialize(raw_data, envelope = nil, qid = nil)
       set_mail_defaults
-      @raw_data = raw_data
+      @raw_data = raw_data.force_encoding("BINARY")
       @email = parse_email(envelope)
       @logger = CarterdteSmtpFilter.logger
       @dte = extract_dte
