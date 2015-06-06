@@ -25,7 +25,7 @@ module CarterdteSmtpFilter
       # working with Postfix
       begin
         message.return_email unless CarterdteSmtpFilter::Config::stand_alone
-      rescue Smtpd451Exception => e
+      rescue Exception => e
         # Esto pasa cuando colocan acento en el subject
         # y no avisan con el encoding que corresponde
         message.email.subject = message.email.subject.force_encoding('ISO-8859-1').encode('UTF-8')
