@@ -19,7 +19,7 @@ module CarterdteSmtpFilter
     def parse_email(envelope)
       email = Mail.read_from_string raw_data
       email.from = envelope[:from] unless envelope.nil?
-      email.from = envelope[:to] unless envelope.nil?
+      email.to = envelope[:to] unless envelope.nil?
       email
     end
     
